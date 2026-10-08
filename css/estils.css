@@ -7,8 +7,9 @@ html, body {
   on està en la pantalla ho he posat amb un color i li he donat un tamanys inicial*/
   background-image: url("/avio.png");
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
   position: absolute;
 }
 
