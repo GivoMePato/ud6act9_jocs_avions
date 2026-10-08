@@ -5,9 +5,10 @@ html, body {
 #avio {
   /* açò caldrà llevar-ho al posar els teus estils, però per a que veges
   on està en la pantalla ho he posat amb un color i li he donat un tamanys inicial*/
-  background-color: blue;
-  width: 10px;
-  height: 10px;
+  background-image: url("/avio.png");
+  background-size: contain;
+  width: 100px;
+  height: 100px;
   position: absolute;
 }
 
