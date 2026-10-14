@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
 html, body {
   margin: 0;
 }
@@ -5,12 +6,18 @@ html, body {
 #avio {
   /* açò caldrà llevar-ho al posar els teus estils, però per a que veges
   on està en la pantalla ho he posat amb un color i li he donat un tamanys inicial*/
-  background-image: url("/avio.png");
+  background-image: url("/imgs/avio.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 85px;
   position: absolute;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+#avio.parar {
+  animation-play-state: paused;
 }
 
 body {
@@ -22,14 +29,160 @@ body {
 }
 
 .menus {
-  background-color: rgba(115, 169, 179, 0.8);
+  background-color: rgba(131, 217, 233, 0.7);
   border: 2px solid #68828f; 
   border-radius: 100px;
   color: white;
   width: 150px;
-  height: 50px;
+  height: 70px;
+  z-index: 1;
+  margin: 10px;
+  text-align: center;
+  font-size: 17px;
+  font-family: sans-serif;
 }
 
 .menus:hover {
-  background-color: rgba(115, 169, 179, 0.9);
+  background-color: rgba(131, 217, 233, 0.8);
+}
+
+.marcador {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 150px;
+  height: 80px;
+  background-color: rgba(177, 182, 184, 0.7);
+  border: 2px solid #d8dadb;
+  border-radius: 15px;
+  box-shadow: 4px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  color: rgba(151, 12, 12, 0.8);
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+
+  font-family: "Modak";
+  font-size: 35px;
+}
+
+.marcador::before {
+  content: "100 pt";
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 2px solid #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  z-index: 1;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalbox{
+    width: 400px;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    border-radius:3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+}
+
+.rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5,-5);
+    transform: scale(-5,-5);
+}
+
+.modalmask:target .rotate{     
+    transform: rotate(360deg) scale(1,1);
+    -webkit-transform: rotate(360deg) scale(1,1);
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius:3px;
+ 
+}
+ 
+.close:hover {
+  background: #FAAC58;
+  color:#222;
+}
+
+/* para que el <a> de Ajuda se vea igual que los botones */
+a.menus {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.negreta {
+  font-weight: bold;
+}
+
+.titol-modal {
+  margin-left: 10px;
+  font-size: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.titol-modal-container {
+  margin-top: 25px;
+  height: 60px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: rgba(40, 104, 116, 0.8);
 }

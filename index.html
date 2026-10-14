@@ -8,10 +8,12 @@
     <title>Red Plane</title>
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/estils.css" />
+    <script src="https://kit.fontawesome.com/bcff7a9dec.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="docReady()">
     <audio id="musica_fons" src="/audio/musica_fons.mp3" autoplay loop></audio>
+    <audio id="mov_avio" src="/audio/avio_es_mou.mp3" loop></audio>
     <header>
         <div class="marcador"></div>
     </header>
@@ -19,9 +21,23 @@
         <!-- avió -->
         <div id="avio"></div>
         <div id="footer">
-            <button class="menus" id="ajuda"> Ajuda </button>
+            <a href="#modal2" class="menus" id="ajuda">Ajuda</a>
             <button class="menus" id="nivell1"> Nivell 1</button>
             <button class="menus" id="nivell2"> Nivell 2</button>
+        </div>
+
+        <div id="modal2" class="modalmask">
+            <div class="modalbox rotate">
+                <a href="#close" title="Close" class="close">X</a>
+                <div class="titol-modal-container">
+                <h2 class="titol-modal">Ajuda</h2>
+                </div>
+                <p><i class="fa-solid fa-arrow-left"></i> Esquerra</p>
+                <p><i class="fa-solid fa-arrow-right"></i> Dreta</p>
+                <p><i class="fa-solid fa-arrow-up"></i> Amunt</p>
+                <p><i class="fa-solid fa-arrow-down"></i> Avall</p>
+                <p> <span class="negreta">1</span>: Parar/Activar so</p>
+            </div>
         </div>
     </main>
 </body>

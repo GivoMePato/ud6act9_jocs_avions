@@ -2,7 +2,7 @@
 //Realment és el número de píxels que ens movem
 //en la pantalla quan prémem una de les tecles de
 //moviment
-const pixels_a_moure = 15;
+const pixels_a_moure = 10;
 
 document.addEventListener("DOMContentLoaded",main);
 
@@ -10,10 +10,15 @@ document.addEventListener("DOMContentLoaded",main);
 function main () {
   document.getElementById("nivell1").addEventListener("click", fondo1);
   document.getElementById("nivell2").addEventListener("click", fondo2);
+
+  document.getElementById("musica_fons").volume = 0.3; 
+  document.getElementById("mov_avio").volume = 0.5;     
 }
 
 function moureEsquerra() {
   let element = document.getElementById("avio");
+  let element2 = document.getElementById("mov_avio");
+  element.classList.add("parar");
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap a l'esquerra.
@@ -26,16 +31,23 @@ function moureEsquerra() {
   //************** per completar per l'alumne *******/
   //                   todo                         */
   //*************************************************/
+    element.style.backgroundImage = "url('/imgs/aviomov.png')";
     let mov = getAvioPos(element).left - pixels_a_moure;
     if (mov >= 0) {
       element.style.left = mov + "px";
     } else {
       element.style.left = 15 + "px";
     }
+    if (element2.paused) {
+      element2.play();
+    }
 }
 
 function moureDreta() {
   let element = document.getElementById("avio");
+  element.style.backgroundImage = "url('/imgs/aviomov.png')";
+  let element2 = document.getElementById("mov_avio");
+  element.classList.add("parar");
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap a la dreta.
@@ -56,10 +68,16 @@ function moureDreta() {
   } else {
     element.style.left = maxim - 15 + "px";
   }
+  if (element2.paused) {
+    element2.play();
+  }
 }
 
 function moureAmunt() {
   let element = document.getElementById("avio");
+  let element2 = document.getElementById("mov_avio");
+  element.classList.add("parar");
+  element.style.backgroundImage = "url('/imgs/aviomov.png')";
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap amunt.
@@ -74,15 +92,21 @@ function moureAmunt() {
   //*************************************************/
   let mov = getAvioPos(element).top - pixels_a_moure;
 
-  if (mov >= 0) {
+  if (mov >= 5) {
     element.style.top = mov + "px";
   } else {
     element.style.top = 15 + "px";
+  }
+  if (element2.paused) {
+    element2.play();
   }
 }
 
 function moureAvall() {
   let element = document.getElementById("avio");
+  let element2 = document.getElementById("mov_avio");
+  element.classList.add("parar");
+  element.style.backgroundImage = "url('/imgs/aviomov.png')";
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap avall.
@@ -102,6 +126,9 @@ function moureAvall() {
     element.style.top = mov + "px";
   } else {
     element.style.top = maxim - 15 + "px";
+  }
+  if (element2.paused) {
+    element2.play();
   }
 }
 
@@ -166,7 +193,14 @@ function moureAvio(evt) {
  * Funció encarregada de fer el que calga quan es pare l'avió
  */
 function pararAvio() {
-  console.log("parem l'avió");
+  let element = document.getElementById("avio");
+  let element2 = document.getElementById("mov_avio");
+  if (!element2.paused) {
+    element2.pause();
+  }
+  element.style.backgroundImage = "url('/imgs/avio.png')";
+  element.classList.remove("parar");
+
 }
 
 function fondo1 () {
