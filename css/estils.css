@@ -8,9 +8,7 @@ p {
 }
 
 #avio {
-  /* açò caldrà llevar-ho al posar els teus estils, però per a que veges
-  on està en la pantalla ho he posat amb un color i li he donat un tamanys inicial*/
-  background-image: url("/imgs/avio.png");
+  background-image: url("../imgs/avio.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
@@ -29,7 +27,7 @@ p {
 }
 
 body {
-  background-image: url("/fons_nivells/nivell1.jpg");
+  background-image: url("../fons_nivells/nivell1.jpg");
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -40,6 +38,7 @@ body {
   background-color: rgba(131, 217, 233, 0.7);
   border: 2px solid #68828f; 
   border-radius: 100px;
+  box-sizing: border-box;
   color: white;
   width: 150px;
   height: 70px;
@@ -51,7 +50,7 @@ body {
 }
 
 .menus:hover {
-  background-color: rgba(131, 217, 233, 0.8);
+  background-color: rgba(95, 165, 180, 0.7)
 }
 
 .marcador {

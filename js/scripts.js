@@ -20,19 +20,7 @@ function moureEsquerra() {
   let element2 = document.getElementById("mov_avio");
   element.classList.add("pararFlotar");
   element.classList.add("esquerra");
-  //ací agafarem la posició actual on estiga l'avió amb
-  //getAvioPos(element)
-  //i el mourem "pixels_a_moure" píxels cap a l'esquerra.
-  //Ex:
-  //   getAvioPos(element).left torna la posició de l'eix X de l'avió
-  //   getAvioPos(element).top torna la posició de l'eix Y de l'avió
-  //Per a canviar-li la posició a un element html cal
-  //posar  element.style ... (cerca per internet per veure
-  //quines propietats té style que estiguen relacionades amb posicions)
-  //************** per completar per l'alumne *******/
-  //                   todo                         */
-  //*************************************************/
-    element.style.backgroundImage = "url('/imgs/aviomov.png')";
+    element.style.backgroundImage = "url('imgs/aviomov.png')";
     let mov = getAvioPos(element).left - pixels_a_moure;
     if (mov >= 0) {
       element.style.left = mov + "px";
@@ -46,22 +34,10 @@ function moureEsquerra() {
 
 function moureDreta() {
   let element = document.getElementById("avio");
-  element.style.backgroundImage = "url('/imgs/aviomov.png')";
+  element.style.backgroundImage = "url('imgs/aviomov.png')";
   let element2 = document.getElementById("mov_avio");
   element.classList.add("pararFlotar");
   element.classList.remove("esquerra");
-  //ací agafarem la posició actual on estiga l'avió amb
-  //getAvioPos(element)
-  //i el mourem "pixels_a_moure" píxels cap a la dreta.
-  //Ex:
-  //   getAvioPos(element).left torna la posició de l'eix X de l'avió
-  //   getAvioPos(element).top torna la posició de l'eix Y de l'avió
-  //Per a canviar-li la posició a un element html cal
-  //posar  element.style ... (cerca per internet per veure
-  //quines propietats té style que estiguen relacionades amb posicions)
-  //************** per completar per l'alumne *******/
-  //                   todo                         */
-  //*************************************************/
   let maxim = window.innerWidth - element.offsetWidth;
   let mov = getAvioPos(element).left + pixels_a_moure;
 
@@ -79,19 +55,7 @@ function moureAmunt() {
   let element = document.getElementById("avio");
   let element2 = document.getElementById("mov_avio");
   element.classList.add("pararFlotar");
-  element.style.backgroundImage = "url('/imgs/aviomov.png')";
-  //ací agafarem la posició actual on estiga l'avió amb
-  //getAvioPos(element)
-  //i el mourem "pixels_a_moure" píxels cap amunt.
-  //Ex:
-  //   getAvioPos(element).left torna la posició de l'eix X de l'avió
-  //   getAvioPos(element).top torna la posició de l'eix Y de l'avió
-  //Per a canviar-li la posició a un element html cal
-  //posar  element.style ... (cerca per internet per veure
-  //quines propietats té style que estiguen relacionades amb posicions)
-  //************** per completar per l'alumne *******/
-  //                   todo                         */
-  //*************************************************/
+  element.style.backgroundImage = "url('imgs/aviomov.png')";
   let mov = getAvioPos(element).top - pixels_a_moure;
 
   if (mov >= 5) {
@@ -108,19 +72,7 @@ function moureAvall() {
   let element = document.getElementById("avio");
   let element2 = document.getElementById("mov_avio");
   element.classList.add("pararFlotar");
-  element.style.backgroundImage = "url('/imgs/aviomov.png')";
-  //ací agafarem la posició actual on estiga l'avió amb
-  //getAvioPos(element)
-  //i el mourem "pixels_a_moure" píxels cap avall.
-  //Ex:
-  //   getAvioPos(element).left torna la posició de l'eix X de l'avió
-  //   getAvioPos(element).top torna la posició de l'eix Y de l'avió
-  //Per a canviar-li la posició a un element html cal
-  //posar  element.style ... (cerca per internet per veure
-  //quines propietats té style que estiguen relacionades amb posicions)
-  //************** per completar per l'alumne *******/
-  //                   todo                         */
-  //*************************************************/
+  element.style.backgroundImage = "url('imgs/aviomov.png')";
   let maxim = window.innerHeight - element.offsetHeight;
   let mov = getAvioPos(element).top + pixels_a_moure;
 
@@ -210,11 +162,11 @@ function pararAvio() {
 }
 
 function fondo1 () {
-  document.body.style.backgroundImage = "url('/fons_nivells/nivell1.jpg')";
+  document.body.style.backgroundImage = "url('fons_nivells/nivell1.jpg')";
 }
 
 function fondo2 () {
-  document.body.style.backgroundImage = "url('/fons_nivells/nivell2.jpg')";
+  document.body.style.backgroundImage = "url('fons_nivells/nivell2.jpg')";
 }
 
 
