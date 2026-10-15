@@ -3,21 +3,29 @@ html, body {
   margin: 0;
 }
 
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #avio {
   /* açò caldrà llevar-ho al posar els teus estils, però per a que veges
   on està en la pantalla ho he posat amb un color i li he donat un tamanys inicial*/
   background-image: url("/imgs/avio.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 180px;
+  width: 150px;
   height: 85px;
   position: absolute;
-  z-index: 2;
-  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
 }
 
-#avio.parar {
+#avio.pararFlotar {
   animation-play-state: paused;
+}
+
+#avio.esquerra {
+  scale: -1 1;
 }
 
 body {
@@ -57,7 +65,7 @@ body {
   border-radius: 15px;
   box-shadow: 4px 6px 15px 4px rgba(0, 0, 0, 0.5);
   color: rgba(151, 12, 12, 0.8);
-  z-index: 1;
+  z-index: 2;
 
   display: flex;
   justify-content: center;
@@ -81,7 +89,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;    
-  z-index: 1;
+  z-index: 2;
 }
 
 @keyframes float {
@@ -158,15 +166,14 @@ body {
   color:#222;
 }
 
-/* para que el <a> de Ajuda se vea igual que los botones */
 a.menus {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
 
-.negreta {
+strong {
   font-weight: bold;
 }
 

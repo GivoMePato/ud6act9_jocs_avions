@@ -18,7 +18,8 @@ function main () {
 function moureEsquerra() {
   let element = document.getElementById("avio");
   let element2 = document.getElementById("mov_avio");
-  element.classList.add("parar");
+  element.classList.add("pararFlotar");
+  element.classList.add("esquerra");
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap a l'esquerra.
@@ -47,7 +48,8 @@ function moureDreta() {
   let element = document.getElementById("avio");
   element.style.backgroundImage = "url('/imgs/aviomov.png')";
   let element2 = document.getElementById("mov_avio");
-  element.classList.add("parar");
+  element.classList.add("pararFlotar");
+  element.classList.remove("esquerra");
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
   //i el mourem "pixels_a_moure" píxels cap a la dreta.
@@ -76,7 +78,7 @@ function moureDreta() {
 function moureAmunt() {
   let element = document.getElementById("avio");
   let element2 = document.getElementById("mov_avio");
-  element.classList.add("parar");
+  element.classList.add("pararFlotar");
   element.style.backgroundImage = "url('/imgs/aviomov.png')";
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
@@ -105,7 +107,7 @@ function moureAmunt() {
 function moureAvall() {
   let element = document.getElementById("avio");
   let element2 = document.getElementById("mov_avio");
-  element.classList.add("parar");
+  element.classList.add("pararFlotar");
   element.style.backgroundImage = "url('/imgs/aviomov.png')";
   //ací agafarem la posició actual on estiga l'avió amb
   //getAvioPos(element)
@@ -154,6 +156,9 @@ function getAvioPos() {
  * @param {*} evt: event que es llança
  */
 function moureAvio(evt) {
+    if (document.querySelector(".modalmask:target")) {
+    return;
+  }
   switch (evt.keyCode) {
     case 37:
       /** hem apretat la tecla de fletxa esquerra */
@@ -199,7 +204,7 @@ function pararAvio() {
     element2.pause();
   }
   element.style.backgroundImage = "url('/imgs/avio.png')";
-  element.classList.remove("parar");
+  element.classList.remove("pararFlotar");
 
 }
 
