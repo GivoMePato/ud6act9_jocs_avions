@@ -3,7 +3,7 @@
 //en la pantalla quan prémem una de les tecles de
 //moviment
 const pixels_a_moure = 10;
-
+let soActivat = true;
 document.addEventListener("DOMContentLoaded",main);
 
 
@@ -39,7 +39,7 @@ function moureEsquerra() {
     } else {
       element.style.left = 15 + "px";
     }
-    if (element2.paused) {
+    if (soActivat && element2.paused) {
       element2.play();
     }
 }
@@ -70,7 +70,7 @@ function moureDreta() {
   } else {
     element.style.left = maxim - 15 + "px";
   }
-  if (element2.paused) {
+  if (soActivat && element2.paused) {
     element2.play();
   }
 }
@@ -99,7 +99,7 @@ function moureAmunt() {
   } else {
     element.style.top = 15 + "px";
   }
-  if (element2.paused) {
+  if (soActivat && element2.paused) {
     element2.play();
   }
 }
@@ -129,7 +129,7 @@ function moureAvall() {
   } else {
     element.style.top = maxim - 15 + "px";
   }
-  if (element2.paused) {
+  if (soActivat && element2.paused) {
     element2.play();
   }
 }
@@ -176,14 +176,15 @@ function moureAvio(evt) {
       /** hem apretat la tecla de fletxa avall */
       moureAvall();
       break;
-    case 49: 
+    case 49:
     case 97:
       const musica_fons = document.getElementById("musica_fons");
-      /** 2 cases, numeric i de dalt */
       if (musica_fons.paused) {
         musica_fons.play();
+        soActivat = true;
       } else {
         musica_fons.pause();
+        soActivat = false;
       }
       break;
     //************** per completar per l'alumne *******/
